@@ -33,7 +33,7 @@ The introductory page of the workshop is broken down into the following sections
 | [Lab 1: Set up Presto](lab-1/README.md) | Set up a Presto cluster with 1 coordinator and 3 workers |
 | [Lab 2: Set up Data Sources](lab-2/README.md) | Set up 2 data source - MySQL and MongoDB |
 | [Lab 3: Connect to Data Sources](lab-3/README.md) | Set up 2 catalogs to connect to MySQL and MongoDB |
-| [Lab 4: Dashboard](lab-4/README.md) | Visualize the data |
+| [Lab 4: Data Visualization](lab-4/README.md) | Visualize the data |
 
 ## Compatibility
 

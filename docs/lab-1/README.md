@@ -26,7 +26,7 @@ Create a docker network to be used by all of the containers, including the Prest
    ```
 2. Check the docker network named `presto_network` you just created:
    ```sh
-   docker network presto_network
+   docker network inpsect presto_network
    ```
    You may see similar outputs like this:
    ```
@@ -72,10 +72,10 @@ Bring up a Presto server as a coordinator by using the following command:
 ```sh
 docker run -d -p 8080:8080 -v ./conf/coordinator/config.properties:/opt/presto-server/etc/config.properties \
     -v ./conf/coordinator/jvm.config:/opt/presto-server/etc/jvm.config -v ./catalog:/opt/presto-server/etc/catalog \
-    --net presto_network --name coordinator prestodb/presto:0.284
+    --net presto_network --name coordinator prestodb/presto:latest
 ```
 
-This command starts a container named `coordinator` using the [prestodb/presto:0.284](https://hub.docker.com/layers/prestodb/presto/0.284/images/sha256-8ccb0476a642a13ee2a86d0660c215e9fe8fc8d1f0066cdbdea6b2e34187c248?context=explore) image with the `config.properties` and `jvm.config` configurations under the `config/coordinator` directory along with the catalog settings in the `./catalog` directory. For the catalog settings, we will cover that in the `lab-3``.
+This command starts a container named `coordinator` using the [prestodb/presto:latest](https://hub.docker.com/layers/prestodb/presto/latest/images/sha256-9663cb926599f6ceaef64cbc6a28226bab97abf7742e3d79c2bb3eeb34ea69ac) image with the `config.properties` and `jvm.config` configurations under the `config/coordinator` directory along with the catalog settings in the `./catalog` directory. For the catalog settings, we will cover that in the `lab-3``.
 
 Here are the settings for the coordinator:
 ```text
@@ -116,7 +116,7 @@ Start a worker node named `worker1` using the following command:
 ```sh
 docker run -d -p 8081:8081 -v ./conf/worker1/config.properties:/opt/presto-server/etc/config.properties \
     -v ./conf/worker1/jvm.config:/opt/presto-server/etc/jvm.config -v ./catalog:/opt/presto-server/etc/catalog \
-    --net presto_network --name worker1 prestodb/presto:0.284
+    --net presto_network --name worker1 prestodb/presto:latest
 ```
 
 This command kicks off a worker node named `worker1` and uses the configurations under the `conf/worker1` directory with the following settings:
@@ -152,7 +152,7 @@ Start the second worker node named `worker2` using the following command:
 ```sh
 docker run -d -p 8082:8082 -v ./conf/worker2/config.properties:/opt/presto-server/etc/config.properties \
     -v ./conf/worker2/jvm.config:/opt/presto-server/etc/jvm.config -v ./catalog:/opt/presto-server/etc/catalog \
-    --net presto_network --name worker2 prestodb/presto:0.284
+    --net presto_network --name worker2 prestodb/presto:latest
 ```
 
 This command kicks off a worker node named `worker2` and uses the configurations under the `conf/worker2` directory with the following settings:
@@ -163,7 +163,7 @@ http-server.http.port=8082
 discovery.uri=http://coordinator:8080
 ```
 
-The settings are almost the same as `worker1`, except the port number:
+The settings are almost the same as `worker1, except for the port number:
 
 - `http-server.http.port` property defines the port number for the HTTP server. Since we are running a coordinator and 3 worker nodes on
     the local machine, need to use a different port for each node.
@@ -182,7 +182,7 @@ Start the third worker node named `worker3` using the following command:
 ```sh
 docker run -d -p 8083:8083 -v ./conf/worker3/config.properties:/opt/presto-server/etc/config.properties \
     -v ./conf/worker3/jvm.config:/opt/presto-server/etc/jvm.config -v ./catalog:/opt/presto-server/etc/catalog \
-    --net presto_network --name worker3 prestodb/presto:0.284
+    --net presto_network --name worker3 prestodb/presto:latest
 ```
 
 This command kicks off a worker node named `worker3` and uses the configurations under the `conf/worker3` directory with the following settings:

@@ -36,7 +36,7 @@ Or run the `presto-cli` with a dedicated container and connect to the coordinato
 ```sh
 $ docker run --rm -ti -v ./conf/coordinator/config.properties:/opt/presto-server/etc/config.properties \
     -v ./conf/coordinator/jvm.config:/opt/presto-server/etc/jvm.config --net presto_network \
-    --entrypoint /opt/presto-cli prestodb/presto:0.284 --server coordinator:8080
+    --entrypoint /opt/presto-cli prestodb/presto:latest --server coordinator:8080
 presto>
 ```
 
@@ -114,7 +114,7 @@ new data sources.
 ```sh
 $ docker run --rm -ti -v ./conf/coordinator/config.properties:/opt/presto-server/etc/config.properties \
   -v ./conf/coordinator/jvm.config:/opt/presto-server/etc/jvm.config --net presto_network \
-  --entrypoint /opt/presto-cli prestodb/presto:0.284 --server coordinator:8080
+  --entrypoint /opt/presto-cli prestodb/presto:latest --server coordinator:8080
 presto> show catalogs;
  Catalog
 ---------
