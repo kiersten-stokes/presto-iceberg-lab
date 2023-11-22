@@ -10,25 +10,30 @@ multiple sources, archiving analytics across your entire organization. Dozens of
 Presto community today. You can see the high-level architecture diagram below:
 ![presto diag](../images/diag-presto-main.svg)
 
+## Data Lakehouses
 
-## Features of Presto
 Here are the notable features of Presto that make it perfect for the data lakehouse platform.
 
-### Adaptive Multi-tenant System
+## Presto Overview
+
 Presto is capable of running hundreds of concurrent queries and fully utilizing the CPUs, memory, and I/O on the cluster
 which can scale up to thousands of worker nodes.
 
-### Extensible
+## Table Formats
+
 It's easy to set up Presto to connect to many different data sources and run federated queries.
 
-### Performance
+## Apache Iceberg
+
 Presto is built for high performance. The key features include:
+
 - In-memory data processing and reduce Disk I/O latency.
 - Built-in query optimizations, including data layout awareness, predicate pushdown, inter-node parallelism, and etc.
 - Optimized stage and task scheduling
 - Resource management
 
 ## Getting Started
+
 To get set up a Presto cluster and try out its amazing features, you can go to [prestodb.io](https://prestodb.io/) where
 you can find the get started information. You can also find detailed documentation [here](https://prestodb.io/docs/current).
 In the [Installation](http://prestodb.io/docs/current/installation.html) section, it provides the instructions to set up

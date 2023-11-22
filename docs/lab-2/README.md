@@ -1,13 +1,14 @@
-# Set up Data Sources
+# Set up Data Source
 
 In this section, you will set up MongoDB and MySQL as the data sources.
 
 This section is comprised of the following steps:
 
-1. [Set Up MongoDB](#1-mongodb)
-1. [Set Up MySQL](#2-mysql)
+- [Set up Data Source](#set-up-data-source)
+  - [1. Create a storage bucket](#1-create-a-storage-bucket)
+  - [2. MySQL](#2-mysql)
 
-## 1. MongoDB
+## 1. Create a storage bucket
 
 Use the following command to start a MongoDB:
 ```sh
