@@ -7,11 +7,11 @@ networks:
 services:
   presto-coordinator:
     container_name: presto-coordinator
-    image: prestodb/presto:0.282
+    image: prestodb/presto:0.286-edge3  # includes not-yet-released time travel feature
     ports:
       - 8080:8080
     volumes:
-      - ./presto:/opt/presto-server/etc
+      - ./presto/etc:/opt/presto-server/etc
     environment:
       AWS_ACCESS_KEY: minio
       AWS_SECRET_ACCESS_KEY: minio123
@@ -36,7 +36,6 @@ services:
 
   hive-metastore:
     build: ./hive-metastore  # build custom HMS image
-    image: hive-metastore:latest
     hostname: hive-metastore
     container_name: hive-metastore
     ports:

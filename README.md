@@ -1,23 +1,16 @@
-# Presto-Iceberg Workshop
+# Using Iceberg with Presto Beginner Workshop
 
-This is a repo that hosts the materials for the Presto-Iceberg workshop. You can view the workshop
-[here](https://ibm.github.io/presto-iceberg-lab/)
+This is a template for workshops hosted on GitHub Pages using Material for MkDocs. To view it online, go to:
 
-Here is the file structure of this repo:
+<https://ibm.github.io/presto-iceberg-lab>
 
-```ini
-+-- conf (configuration and other files needed to start containers)
-+-- data (any data (CSV, JSON, etc files) to be used)
-+-- docs (this is where the workshop is documented)
-|   +-- <folder-n> (these are exercises for the workshop)
-    |   +-- README.md (the steps for the exercise, in Markdown)
-|   +-- README.md (this will appear on the gitbook home page)
-|   +-- src (any application source code can go here)
-+-- .mkdocs.yaml (configuration for mkdocs)
-+-- .travis.yaml (runs markdownlint by default)
-+-- README.md (only used for GitHub.com)
+## Tips and conventions
+
+### Screenshots
+
+Screenshots look better if they are full page.
+Use [ImageMagick](https://imagemagick.org) to create a nice border around images with this command:
+
+```bash
+magick mogrify -bordercolor gray -border 2
 ```
-
-## Authors
-
-- Kiersten Stokes kiersten.stokes@ibm.com
